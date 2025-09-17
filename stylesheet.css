@@ -1,0 +1,133 @@
+body {
+    /*background-color: lightcoral;*/
+    /*text transform: uppercase;*/
+}
+
+section.container {
+    border: 10px solid black;
+    padding: 10px 20px 5px;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+
+        > * {
+            /*border: 1px dashed black;*/
+        }
+
+        .logo {
+            background-color: darkgray;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+
+            a {
+                /*font-size: 15px;  */
+                background-color: lightgray;
+                color: white;
+                border-radius: 5px;
+                padding: 10px;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: darkgray;
+                }
+            }
+        }
+    }
+
+
+    section.hero {
+        border: 10px solid black;
+
+        img {
+            width: 100%;
+
+        }
+
+        &.bg-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 250px;
+            border: 5px solid orange;
+            background-image: url('concept-of-hero.jpg');
+            background-size: cover;
+            background-position: center;
+
+            .content {
+                font-size: 60px;
+                color: white;
+            }
+        }
+    }
+
+}
+
+section.products {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid green;
+
+    div.product {
+        border: 2px dashed blue;
+
+        /* pseudo-class that applies these properties to the 2nd of the divs whose class is product */
+
+        &:nth-of-type(2) {
+            border-width: 3px;
+            border-style: solid;
+        }
+
+        /* a custom class that, which applied to be an element that has the class of "product", will work */
+
+        &.highlighted {
+            border-width: 3px;
+            border-style: solid
+        }
+
+        .top-line {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between
+
+        }
+
+        img {
+            width: 100%;
+    }
+}
+
+}
+@media screen and (min-width: 700px) {
+    section.container {
+        section.products {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .product {
+                width: 45%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    section.container {
+        section.products {
+            .product {
+                width: 30%;
+            }
+        }
+    }
+}
